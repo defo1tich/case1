@@ -1,0 +1,12 @@
+def sum_negatives_between_min_max(arr):
+    if not arr:
+        return 0
+    min_idx = arr.index(min(arr))
+    max_idx = arr.index(max(arr))
+    start = min(min_idx, max_idx)
+    end = max(min_idx, max_idx)
+    sum_neg = 0
+    for i in range(start + 1, end):
+        if arr[i] < 0:
+            sum_neg += arr[i]
+    return sum_neg
